@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "PingNet1": {
+      "commandName": "Project",
+      "commandLineArgs": "35 36 256 2000"
+    }
+  }
+}

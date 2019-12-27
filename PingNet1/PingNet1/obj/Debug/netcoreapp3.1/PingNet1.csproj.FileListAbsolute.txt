@@ -1,0 +1,11 @@
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\bin\Debug\netcoreapp3.1\PingNet1.exe
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\bin\Debug\netcoreapp3.1\PingNet1.deps.json
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\bin\Debug\netcoreapp3.1\PingNet1.runtimeconfig.json
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\bin\Debug\netcoreapp3.1\PingNet1.runtimeconfig.dev.json
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\bin\Debug\netcoreapp3.1\PingNet1.dll
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\bin\Debug\netcoreapp3.1\PingNet1.pdb
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\obj\Debug\netcoreapp3.1\PingNet1.AssemblyInfoInputs.cache
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\obj\Debug\netcoreapp3.1\PingNet1.AssemblyInfo.cs
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\obj\Debug\netcoreapp3.1\PingNet1.dll
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\obj\Debug\netcoreapp3.1\PingNet1.pdb
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\obj\Debug\netcoreapp3.1\PingNet1.csprojAssemblyReference.cache

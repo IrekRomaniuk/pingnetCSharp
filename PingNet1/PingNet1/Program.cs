@@ -19,9 +19,9 @@ namespace PingNet1
 
         static void Main(string[] args)
         {
-            if (args.Length < 3)
+            if (args.Length < 4)
             {
-                Console.WriteLine("Need IP range as argument i.e. 192, 208 and 2 for 10.192-207.1-255.1-255");
+                Console.WriteLine("Need IP range as argument i.e. 192, 208, 2 and 2000 for 10.192-207.1-255.1 with 2s tiemout");
                 return;
             }
             Console.WriteLine("Pinging 10.{0}-{1}.1-255.1-{2}", args[0], Int32.Parse(args[1]) - 1, Int32.Parse(args[2]) - 1);
@@ -29,24 +29,16 @@ namespace PingNet1
             Stopwatch sw = new Stopwatch();
             sw.Start();
             string ipBase = "10.";
-            for (int i = Int32.Parse(args[0]); i < Int32.Parse(args[1]); i++)
-            {
-                for (int j = 1; j < 256; j++)
-                {
-                    for (int n = 1; n < Int32.Parse(args[2]); n++)
-                    {
-                        string ip = ipBase + i.ToString() + "." + j.ToString() + "." + n.ToString();
-                        totalCount++;
-                        //Console.WriteLine(ip);
-                        Ping p = new Ping();
-                        p.PingCompleted += new PingCompletedEventHandler(p_PingCompleted);
-                        countdown.AddCount();
-                        p.SendAsync(ip, 100, ip);
-                    }
-
-                }
-
+            
+            foreach ( var ip in ListAll.Ip(ipBase, args[0], args[1], args[2])) {
+                totalCount++;
+                //Console.WriteLine(ip);
+                Ping p = new Ping();
+                p.PingCompleted += new PingCompletedEventHandler(p_PingCompleted);
+                countdown.AddCount();
+                p.SendAsync(ip, Int32.Parse(args[3]), ip);
             }
+                  
             countdown.Signal();
             countdown.Wait();
             sw.Stop();
