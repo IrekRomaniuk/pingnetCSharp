@@ -4,9 +4,9 @@ using System.Text;
 
 namespace PingNet1
 {
-    public static class ListAll
+    class ListAll: IListAllInterface
     {
-        public static List<string> Ip(string ipBase, string secondByte, string thirdByte, string fourthByte)
+        public List<string> Ip(string ipBase, string secondByte, string thirdByte, string fourthByte)
         {
             List<string> addresses = new List<string>();
             for (int i = Int32.Parse(secondByte); i < Int32.Parse(thirdByte); i++)

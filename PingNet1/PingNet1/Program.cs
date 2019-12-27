@@ -9,6 +9,10 @@ using System.Net.NetworkInformation;
 
 namespace PingNet1
 {
+    interface IListAllInterface
+    {
+        System.Collections.Generic.List<string> Ip(string ipbase, string second, string thrid, string fourth);
+    }
     class Program
     {
         static CountdownEvent countdown;
@@ -29,8 +33,8 @@ namespace PingNet1
             Stopwatch sw = new Stopwatch();
             sw.Start();
             string ipBase = "10.";
-            
-            foreach ( var ip in ListAll.Ip(ipBase, args[0], args[1], args[2])) {
+            IListAllInterface ipList = new ListAll();
+            foreach ( var ip in ipList.Ip(ipBase, args[0], args[1], args[2])) {
                 totalCount++;
                 //Console.WriteLine(ip);
                 Ping p = new Ping();
