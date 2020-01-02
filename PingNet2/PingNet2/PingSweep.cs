@@ -6,35 +6,37 @@ using System.Threading.Tasks;
 
 namespace PingNet2
 {
+    interface IListAllInterface
+    {
+        System.Collections.Generic.List<string> Ip(string ipbase, string second, string thrid, string fourth);
+        System.Collections.Generic.List<string> Ip(string ipcidr);
+    }
     public class PingSweep
     {
-        private static string BaseIP = "10.4.4.";
-        private static int StartIP = 1;
-        private static int StopIP = 255;
-        private static string ip;
+        //private static string BaseIP = "10.4.4.";
+        //private static int StartIP = 1;
+        //private static int StopIP = 255;
+        //private static string ip;
 
-        private static int timeout = 100;
         private static int nFound = 0;
 
         static object lockObj = new object();
         static Stopwatch stopWatch = new Stopwatch();
         static TimeSpan ts;
 
-        public static async void RunPingSweep_Async()
+        public static async void RunPingSweep_Async(string[] args)
         {
             nFound = 0;
 
             var tasks = new List<Task>();
-
             stopWatch.Start();
-
-            for (int i = StartIP; i <= StopIP; i++)
+            IListAllInterface ipList = new ListAll();
+            string ipBase = "10.";
+            foreach (var ip in ipList.Ip(ipBase, args[0], args[1], args[2]))
             {
-                ip = BaseIP + i.ToString();
-
                 System.Net.NetworkInformation.Ping p = new System.Net.NetworkInformation.Ping();
-                //Console.WriteLine(ip);
-                var task = PingAndUpdateAsync(p, ip);
+                //Console.WriteLine(ip.ToString());
+                var task = PingAndUpdateAsync(p, ip.ToString(), Int32.Parse(args[3]));
                 tasks.Add(task);
             }
 
@@ -48,7 +50,7 @@ namespace PingNet2
             });
         }
 
-        private static async Task PingAndUpdateAsync(System.Net.NetworkInformation.Ping ping, string ip)
+        private static async Task PingAndUpdateAsync(System.Net.NetworkInformation.Ping ping, string ip, int timeout)
         {
             var reply = await ping.SendPingAsync(ip, timeout);
 
