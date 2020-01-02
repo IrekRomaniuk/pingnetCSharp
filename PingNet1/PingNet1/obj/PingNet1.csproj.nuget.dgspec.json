@@ -37,6 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "IPNetwork2": {
+              "target": "Package",
+              "version": "[2.4.0.169, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

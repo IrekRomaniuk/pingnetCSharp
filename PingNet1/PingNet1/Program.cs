@@ -12,6 +12,7 @@ namespace PingNet1
     interface IListAllInterface
     {
         System.Collections.Generic.List<string> Ip(string ipbase, string second, string thrid, string fourth);
+        System.Collections.Generic.List<string> Ip(string ipcidr);
     }
     class Program
     {

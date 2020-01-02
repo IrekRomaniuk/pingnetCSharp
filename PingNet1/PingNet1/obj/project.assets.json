@@ -1,11 +1,48 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "IPNetwork2/2.4.0.169": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Net.IPNetwork.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.IPNetwork.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "IPNetwork2/2.4.0.169": {
+      "sha512": "nJ40QEJEHsbDgid+M9WirMjQZ1VllVB8vZz/mqZWPv8TTALlexgBvOpYuTWcWiAWM/3WId2NErgqXu9sVny/5A==",
+      "type": "package",
+      "path": "ipnetwork2/2.4.0.169",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "ipnetwork2.2.4.0.169.nupkg.sha512",
+        "ipnetwork2.nuspec",
+        "lib/net40/System.Net.IPNetwork.dll",
+        "lib/net40/System.Net.IPNetwork.xml",
+        "lib/net45/System.Net.IPNetwork.dll",
+        "lib/net45/System.Net.IPNetwork.xml",
+        "lib/net46/System.Net.IPNetwork.dll",
+        "lib/net46/System.Net.IPNetwork.xml",
+        "lib/net47/System.Net.IPNetwork.dll",
+        "lib/net47/System.Net.IPNetwork.xml",
+        "lib/netstandard1.6/System.Net.IPNetwork.dll",
+        "lib/netstandard1.6/System.Net.IPNetwork.xml",
+        "lib/netstandard2.0/System.Net.IPNetwork.dll",
+        "lib/netstandard2.0/System.Net.IPNetwork.xml"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "IPNetwork2 >= 2.4.0.169"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\iromaniuk\\.nuget\\packages\\": {}
@@ -43,6 +80,12 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "dependencies": {
+          "IPNetwork2": {
+            "target": "Package",
+            "version": "[2.4.0.169, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

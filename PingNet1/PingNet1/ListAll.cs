@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Text;
 
 namespace PingNet1
@@ -19,6 +20,12 @@ namespace PingNet1
                     }
                 }
             }
+            return addresses;
+        }
+        public List<string> Ip(string cidr)
+        {
+            List<string> addresses = new List<string>() {"8.8.8.8"};
+            //IPNetwork ipnetwork = IPNetwork.Parse(cidr);
             return addresses;
         }
     }

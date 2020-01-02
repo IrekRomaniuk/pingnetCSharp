@@ -9,3 +9,5 @@ C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\obj\Debug\netcor
 C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\obj\Debug\netcoreapp3.1\PingNet1.dll
 C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\obj\Debug\netcoreapp3.1\PingNet1.pdb
 C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\obj\Debug\netcoreapp3.1\PingNet1.csprojAssemblyReference.cache
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\bin\Debug\netcoreapp3.1\System.Net.IPNetwork.dll
+C:\Users\iromaniuk\source\repos\pingnetCSharp\PingNet1\PingNet1\obj\Debug\netcoreapp3.1\PingNet1.csproj.CopyComplete
