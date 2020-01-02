@@ -33,6 +33,7 @@ namespace PingNet2
                 ip = BaseIP + i.ToString();
 
                 System.Net.NetworkInformation.Ping p = new System.Net.NetworkInformation.Ping();
+                //Console.WriteLine(ip);
                 var task = PingAndUpdateAsync(p, ip);
                 tasks.Add(task);
             }
@@ -43,6 +44,7 @@ namespace PingNet2
                 ts = stopWatch.Elapsed;
                 Console.WriteLine(nFound.ToString() + " devices found! Elapsed time: " + ts.ToString(), "Asynchronous");
                 //MessageBox.Show(nFound.ToString() + " devices found! Elapsed time: " + ts.ToString(), "Asynchronous");
+                //Console.ReadLine();
             });
         }
 
@@ -50,8 +52,11 @@ namespace PingNet2
         {
             var reply = await ping.SendPingAsync(ip, timeout);
 
+            //Console.WriteLine($"ip: {ip} - reply: {reply.Status}");
+
             if (reply.Status == System.Net.NetworkInformation.IPStatus.Success)
             {
+                Console.WriteLine(ip);
                 lock (lockObj)
                 {
                     nFound++;
