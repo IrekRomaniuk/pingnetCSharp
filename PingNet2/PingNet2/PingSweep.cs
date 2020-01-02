@@ -13,12 +13,7 @@ namespace PingNet2
     }
     public class PingSweep
     {
-        //private static string BaseIP = "10.4.4.";
-        //private static int StartIP = 1;
-        //private static int StopIP = 255;
-        //private static string ip;
-
-        private static int nFound = 0;
+        private static int upCount = 0;
 
         static object lockObj = new object();
         static Stopwatch stopWatch = new Stopwatch();
@@ -26,7 +21,7 @@ namespace PingNet2
 
         public static async void RunPingSweep_Async(string[] args)
         {
-            nFound = 0;
+            upCount = 0;
 
             var tasks = new List<Task>();
             stopWatch.Start();
@@ -44,9 +39,10 @@ namespace PingNet2
             {
                 stopWatch.Stop();
                 ts = stopWatch.Elapsed;
-                Console.WriteLine(nFound.ToString() + " devices found! Elapsed time: " + ts.ToString(), "Asynchronous");
-                //MessageBox.Show(nFound.ToString() + " devices found! Elapsed time: " + ts.ToString(), "Asynchronous");
-                //Console.ReadLine();
+                Console.WriteLine(upCount.ToString() + " devices found! Elapsed time: " + ts.ToString(), "Asynchronous");
+                //MessageBox.Show(upCount.ToString() + " devices found! Elapsed time: " + ts.ToString(), "Asynchronous");
+                Console.WriteLine("Completed");
+                Console.ReadLine();
             });
         }
 
@@ -61,7 +57,7 @@ namespace PingNet2
                 Console.WriteLine(ip);
                 lock (lockObj)
                 {
-                    nFound++;
+                    upCount++;
                 }
             }
         }
